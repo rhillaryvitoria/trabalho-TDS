@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Entenda como a inteligência artificial pode ajudar a prevenir riscos biológicos e quais cuidados são necessários.">
+<title>IA & Riscos Biológicos</title>
+<style>
+:root{--navy:#10243a;--blue:#167d9a;--cyan:#56d6cf;--light:#f3f8fa;--ink:#203344;--muted:#617487;--white:#fff;--line:#dce7ec;--orange:#ffb86b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--light);line-height:1.6}
+header{background:rgba(16,36,58,.97);color:white;position:sticky;top:0;z-index:10;border-bottom:1px solid #ffffff20}
+.nav{max-width:1120px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:.3px;display:flex;align-items:center;gap:10px}.brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),#5aa7ef);display:grid;place-items:center;color:var(--navy);font-weight:900}
+nav{display:flex;gap:20px;flex-wrap:wrap}nav a{color:#e8f3f7;text-decoration:none;font-size:.92rem}nav a:hover{color:var(--cyan)}
+.hero{background:radial-gradient(circle at 85% 20%,#167d9a77,transparent 32%),linear-gradient(125deg,#10243a,#123c55 65%,#14677a);color:white;overflow:hidden}
+.hero-inner{max-width:1120px;margin:auto;padding:82px 22px 88px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:42px}
+.eyebrow{color:var(--cyan);font-size:.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(2.5rem,5.5vw,4.6rem);line-height:1.05;margin:14px 0 22px;letter-spacing:-1.8px}.hero h1 span{color:var(--cyan)}.hero p{max-width:610px;color:#d4e5ee;font-size:1.08rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;border-radius:10px;padding:12px 18px;font-weight:700;text-decoration:none;border:1px solid transparent;cursor:pointer;font-size:.95rem}.btn-primary{background:var(--cyan);color:#10243a}.btn-secondary{color:white;border-color:#ffffff70}.btn:hover{transform:translateY(-1px)}
+.hero-art{min-height:320px;display:grid;place-items:center;position:relative}.orb{width:min(300px,75vw);aspect-ratio:1;border-radius:50%;border:1px solid #8ce8e077;display:grid;place-items:center;position:relative;background:radial-gradient(circle,#43cfcf20,transparent 68%);box-shadow:0 0 70px #41d1d122}.orb:before,.orb:after{content:"";position:absolute;border:1px dashed #75e4d477;border-radius:50%;inset:22px;animation:spin 30s linear infinite}.orb:after{inset:52px;animation-direction:reverse;animation-duration:20s}.orb-center{width:120px;height:120px;border-radius:32px;background:linear-gradient(145deg,#5fe1d5,#228eb5);display:grid;place-items:center;color:#10243a;font-size:3.4rem;box-shadow:0 15px 50px #0004;z-index:1}.float-tag{position:absolute;background:#ffffff12;border:1px solid #ffffff35;border-radius:12px;padding:10px 13px;font-size:.82rem;backdrop-filter:blur(8px)}.tag1{top:25px;left:0}.tag2{right:-2px;top:70px}.tag3{bottom:25px;left:20px}@keyframes spin{to{transform:rotate(360deg)}}
+main{max-width:1120px;margin:auto;padding:58px 22px}.section-head{max-width:720px;margin-bottom:30px}.section-head h2{font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.15;color:var(--navy);margin:8px 0 12px}.section-head p{color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 8px 24px #12354a08}.card-icon{width:48px;height:48px;border-radius:14px;background:#e3f7f5;display:grid;place-items:center;font-size:1.5rem;margin-bottom:15px}.card h3{margin:0 0 8px;color:var(--navy);font-size:1.15rem}.card p{margin:0;color:var(--muted);font-size:.96rem}.band{background:#e7f2f5;border-block:1px solid #d5e7ed}.band-inner{max-width:1120px;margin:auto;padding:55px 22px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:start}.list{list-style:none;padding:0;margin:22px 0 0}.list li{padding:12px 0 12px 34px;position:relative;border-bottom:1px solid #d5e4e9}.list li:before{content:"✓";position:absolute;left:0;top:12px;background:#d1f4ec;color:#087d71;width:23px;height:23px;border-radius:50%;display:grid;place-items:center;font-weight:bold;font-size:.85rem}.notice{border-left:4px solid var(--orange);background:#fff8ef;padding:18px 20px;border-radius:0 12px 12px 0;color:#684a2b;margin-top:22px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:step}.step{background:white;border:1px solid var(--line);padding:20px;border-radius:15px}.step:before{counter-increment:step;content:"0" counter(step);font-size:1.35rem;color:var(--blue);font-weight:900;display:block;margin-bottom:12px}.step h3{font-size:1rem;margin:0 0 7px;color:var(--navy)}.step p{font-size:.9rem;color:var(--muted);margin:0}
+.quiz{background:var(--navy);color:white;border-radius:22px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}.quiz h2{margin:0 0 10px;font-size:2rem}.quiz p{color:#d0e0e8}.question{background:#ffffff0d;border:1px solid #ffffff25;padding:20px;border-radius:14px}.question strong{display:block;margin-bottom:14px}.answers{display:grid;gap:9px}.answers button{background:#17364f;color:white;border:1px solid #557084;border-radius:9px;padding:10px;text-align:left;cursor:pointer}.answers button:hover{border-color:var(--cyan)}#feedback{margin-top:13px;font-size:.92rem;color:var(--cyan);min-height:25px}
+footer{background:#0b1b2b;color:#c2d4de;padding:28px 22px;text-align:center;font-size:.88rem}footer strong{color:white}.small{font-size:.85rem;color:var(--muted)}
+@media(max-width:800px){.hero-inner{grid-template-columns:1fr;padding-top:60px}.hero-art{min-height:280px}.cards{grid-template-columns:1fr}.two-col,.quiz{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}nav{gap:10px}.nav{align-items:flex-start;flex-direction:column}}
+@media(max-width:450px){.steps{grid-template-columns:1fr}.hero h1{letter-spacing:-.8px}.hero-inner{padding-bottom:50px}main{padding-top:42px;padding-bottom:42px}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <a class="brand" href="#inicio" style="color:white;text-decoration:none"><span class="brand-mark">IA</span><span>IA & Riscos Biológicos</span></a>
+  <nav aria-label="Navegação principal"><a href="#conceito">O tema</a><a href="#aplicacoes">Aplicações</a><a href="#cuidados">Cuidados</a><a href="#quiz">Quiz</a></nav>
+</div></header>
+<section class="hero" id="inicio"><div class="hero-inner">
+  <div><div class="eyebrow">Tecnologia • Saúde • Segurança</div>
+    <h1>Inteligência artificial <span>e riscos biológicos</span></h1>
+    <p>Como a IA pode ajudar a identificar perigos, proteger profissionais e apoiar decisões mais seguras em hospitais, laboratórios e outros ambientes de trabalho.</p>
+    <div class="actions"><a class="btn btn-primary" href="#conceito">Explorar o tema ↓</a><a class="btn btn-secondary" href="#cuidados">Ver medidas de prevenção</a></div>
+  </div>
+  <div class="hero-art" aria-label="Ilustração abstrata de tecnologia e biologia"><div class="orb"><div class="orb-center">✳</div></div><div class="float-tag tag1">🧬 Dados biológicos</div><div class="float-tag tag2">🤖 Inteligência artificial</div><div class="float-tag tag3">🛡️ Prevenção de riscos</div></div>
+</div></section>
+<main id="conceito">
+  <div class="section-head"><div class="eyebrow">01 / Entenda</div><h2>O que significa essa relação?</h2><p>A inteligência artificial (IA) analisa dados e identifica padrões. Quando usada com responsabilidade, pode contribuir para reconhecer riscos biológicos e melhorar a prevenção.</p></div>
+  <div class="cards">
+    <article class="card"><div class="card-icon">🦠</div><h3>Riscos biológicos</h3><p>São perigos causados por microrganismos ou materiais biológicos, como vírus, bactérias, fungos, sangue e outros fluidos que podem transmitir doenças.</p></article>
+    <article class="card"><div class="card-icon">🤖</div><h3>Inteligência artificial</h3><p>É uma tecnologia que identifica padrões em dados e auxilia tarefas. Ela pode apoiar a análise de informações, mas não substitui a avaliação de profissionais.</p></article>
+    <article class="card"><div class="card-icon">🛡️</div><h3>Prevenção inteligente</h3><p>Com dados adequados e supervisão humana, sistemas de IA podem ajudar a detectar sinais de alerta e orientar ações preventivas.</p></article>
+  </div>
+</main>
+<section class="band" id="aplicacoes"><div class="band-inner">
+  <div class="section-head"><div class="eyebrow">02 / Possibilidades</div><h2>Como a IA pode ajudar?</h2><p>Exemplos de uso em saúde, pesquisa e segurança ocupacional.</p></div>
+  <div class="cards">
+    <article class="card"><div class="card-icon">📊</div><h3>Análise de dados</h3><p>Organizar informações para identificar tendências e possíveis aumentos de casos de doenças infecciosas.</p></article>
+    <article class="card"><div class="card-icon">🔬</div><h3>Apoio ao laboratório</h3><p>Ajudar a analisar imagens e resultados laboratoriais, sempre com validação de especialistas e procedimentos adequados.</p></article>
+    <article class="card"><div class="card-icon">🏥</div><h3>Segurança no trabalho</h3><p>Auxiliar no monitoramento de processos, no controle de estoques de equipamentos de proteção e na identificação de falhas.</p></article>
+  </div>
+</div></section>
+<main id="cuidados">
+  <div class="two-col">
+    <div><div class="eyebrow">03 / Uso responsável</div><div class="section-head"><h2>Benefícios e limites</h2><p>A IA pode acelerar análises e apoiar decisões, mas também pode cometer erros, reproduzir vieses ou gerar alertas incorretos.</p></div>
+      <ul class="list"><li><strong>Agilidade:</strong> processa grandes volumes de informação.</li><li><strong>Detecção de padrões:</strong> pode sinalizar situações que merecem investigação.</li><li><strong>Privacidade:</strong> dados pessoais e de saúde precisam ser protegidos.</li><li><strong>Supervisão humana:</strong> decisões importantes devem ser verificadas por profissionais capacitados.</li></ul>
+    </div>
+    <div><div class="eyebrow">04 / Prevenção na prática</div><div class="section-head"><h2>Cuidados essenciais</h2><p>A tecnologia complementa — não substitui — as medidas de biossegurança.</p></div>
+      <ul class="list"><li>Higienizar as mãos corretamente.</li><li>Usar os EPIs indicados para cada atividade.</li><li>Descartar perfurocortantes e resíduos biológicos em recipientes adequados.</li><li>Seguir protocolos, treinamentos e orientações do serviço.</li><li>Comunicar acidentes, exposições e falhas imediatamente.</li></ul>
+      <div class="notice"><strong>Atenção:</strong> a IA não deve ser usada sozinha para diagnosticar doenças ou decidir medidas de segurança. Siga os protocolos institucionais e as orientações de profissionais responsáveis.</div>
+    </div>
+  </div>
+</main>
+<section class="band"><div class="band-inner">
+  <div class="section-head"><div class="eyebrow">05 / Passo a passo</div><h2>Um caminho seguro para usar IA</h2><p>Uma abordagem responsável combina tecnologia, profissionais preparados e regras claras.</p></div>
+  <div class="steps">
+    <article class="step"><h3>Definir o objetivo</h3><p>Entender qual risco se deseja monitorar e qual problema a tecnologia pode ajudar a resolver.</p></article>
+    <article class="step"><h3>Proteger os dados</h3><p>Usar informações confiáveis e respeitar a privacidade e as regras de acesso.</p></article>
+    <article class="step"><h3>Validar resultados</h3><p>Verificar alertas e recomendações com especialistas e procedimentos aprovados.</p></article>
+    <article class="step"><h3>Acompanhar</h3><p>Avaliar erros, atualizar processos e treinar continuamente as equipes.</p></article>
+  </div>
+</div></section>
+<main id="quiz">
+  <div class="quiz"><div><div class="eyebrow">Teste seus conhecimentos</div><h2>Você aprendeu?</h2><p>Responda à pergunta e confira a explicação. Pequenas atitudes e o uso responsável da tecnologia ajudam a promover ambientes mais seguros.</p></div>
+    <div class="question"><strong>Qual afirmação está correta?</strong><div class="answers">
+      <button onclick="answer(false)">A IA substitui completamente os profissionais de saúde.</button>
+      <button onclick="answer(true)">A IA pode apoiar a prevenção, mas exige supervisão humana.</button>
+      <button onclick="answer(false)">O uso de IA elimina a necessidade de EPIs.</button>
+    </div><div id="feedback" aria-live="polite"></div></div>
+  </div>
+  <p class="small" style="margin-top:22px">Conteúdo educativo introdutório. Consulte as normas de biossegurança e os protocolos atualizados da sua instituição.</p>
+</main>
+<footer><strong>IA & Riscos Biológicos</strong><br>Conhecimento, tecnologia e prevenção caminham juntos.<br><span>Projeto educativo • 2026</span></footer>
+<script>
+function answer(correct){const f=document.getElementById('feedback');if(correct){f.textContent='Correto! A IA pode auxiliar, mas a supervisão humana e os protocolos continuam essenciais.';}else{f.textContent='Ainda não. A IA não substitui profissionais nem elimina as medidas de biossegurança. Tente novamente.';}}
+</script>
+</body></html>
